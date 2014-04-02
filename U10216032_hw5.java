@@ -11,11 +11,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import java.lang.Math;
+
 
 
 public class U10216032_hw5 extends JFrame {
 
 	double memory_number;
+	String get_result;
 	double result;	
 	double calculate_number;	
 	char input_symbol; // determine + , - , * , /
@@ -149,34 +152,62 @@ public class U10216032_hw5 extends JFrame {
 		});		
 		
 		// turn result to positive or negative
-		JButton btn_negative = new JButton("+ / -");
-		btn_negative.setBounds(249, 210, 98, 30);
-		contentPane.add(btn_negative);
-		
+		JButton button_negative = new JButton("+ / -");
+		button_negative.setBounds(249, 210, 98, 30);
+		contentPane.add(button_negative);
+		button_negative.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "0"); 		
+			}
+		});			
 		
 		// plus
 		JButton button_plus = new JButton("+");
 		button_plus.setBounds(365, 50, 59, 30);
 		contentPane.add(button_plus);
-		// char == plus
+		button_plus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "0"); 
+				input_symbol = '+'; // record +
+			}
+		});			
+
 		
 		// minus		
 		JButton button_minus = new JButton("-");
 		button_minus.setBounds(365, 90, 59, 30);
 		contentPane.add(button_minus);
-			
+		button_minus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "0"); 		
+				input_symbol = '-';
+				
+			}
+		});						
 		
 		// times	
 		JButton button_times = new JButton("*");
 		button_times.setBounds(365, 130, 59, 30);
 		contentPane.add(button_times);
-		
+		button_times.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "0"); 	
+				input_symbol = '*';
+				
+			}
+		});					
 		
 		// divide	
 		JButton button_divide = new JButton("/");
 		button_divide.setBounds(365, 170, 59, 30);
 		contentPane.add(button_divide);
-		
+		button_divide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "0"); 
+				input_symbol = '/';
+				
+			}
+		});					
 	
 		// memory the result
 		JButton button_memory = new JButton("MR");
@@ -206,18 +237,46 @@ public class U10216032_hw5 extends JFrame {
 		JButton button_sin = new JButton("sin(x)");
 		button_sin.setBounds(10, 130, 80, 30);
 		contentPane.add(button_sin);
-		
+		button_sin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// get result(String)
+				get_result = txt_showresult.getText();
+
+				// turn result(String) to double , calculate it's sin() , and show it			
+				txt_showresult.setText ( String.valueOf ( Math.sin(Double.parseDouble( get_result ) ) ) );
+			}
+		});			
 		
 		// get cos(x) of the result			
 		JButton button_cos = new JButton("cos(x)");
 		button_cos.setBounds(10, 170, 80, 30);
 		contentPane.add(button_cos);
-		
+		button_cos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// get result(String)
+				get_result = txt_showresult.getText();
+
+				// turn result(String) to double , calculate it's cos() , and show it			
+				txt_showresult.setText ( String.valueOf ( Math.cos(Double.parseDouble( get_result ) ) ) );
+			}
+		});			
 		
 		// get tan(x) of the result			
 		JButton button_tan = new JButton("tan(x)");
 		button_tan.setBounds(10, 210, 80, 30);
 		contentPane.add(button_tan);
+		button_tan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// get result(String)
+				get_result = txt_showresult.getText();
+
+				// turn result(String) to double , calculate it's tan() , and show it			
+				txt_showresult.setText ( String.valueOf ( Math.tan(Double.parseDouble( get_result ) ) ) );
+			}
+		});	
 		
 		
 		// get square root of the result
