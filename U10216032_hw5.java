@@ -57,7 +57,16 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_1);
 		btn_number_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "1"); // get the value of result and add a new number
+				
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("1");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "1");
+				}
 			}
 		});	
 		
@@ -67,7 +76,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_2);
 		btn_number_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "2"); 
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("2");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "2");
+				}
 			}
 		});
 		
@@ -77,7 +94,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_3);
 		btn_number_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "3"); 		
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("3");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "3");
+				}		
 			}
 		});
 		
@@ -87,7 +112,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_4);
 		btn_number_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "4"); 			
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("4");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "4");
+				}
 			}
 		});
 		
@@ -97,7 +130,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_5);		
 		btn_number_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "5"); 		
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("5");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "5");
+				}	
 			}
 		});		
 		
@@ -107,7 +148,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_6);
 		btn_number_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "6"); 			
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("6");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "6");
+				}
 			}
 		});
 		
@@ -117,7 +166,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_7);
 		btn_number_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "7"); 		
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("7");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "7");
+				}	
 			}
 		});		
 		
@@ -127,7 +184,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_8);
 		btn_number_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "8"); 		
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("8");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "8");
+				}	
 			}
 		});
 		
@@ -137,7 +202,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_9);
 		btn_number_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "9"); 			
+				// if textfield show 0 , turn it to the number
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("9");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "9");
+				}		
 			}
 		});		
 		
@@ -147,7 +220,15 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(btn_number_0);
 		btn_number_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "0"); 		
+				// if textfield show 0 , do not change it
+				if( txt_showresult.getText().equals( "0" )){ 
+					txt_showresult.setText("0");
+				}
+				
+				// if textfield show other value , add number after the value
+				else{
+				txt_showresult.setText( txt_showresult.getText() + "0");
+				}	
 			}
 		});		
 		
