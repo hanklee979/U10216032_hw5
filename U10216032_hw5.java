@@ -1,11 +1,7 @@
 package U10216032_hw5;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -35,6 +31,33 @@ public class U10216032_hw5 extends JFrame {
 
 	}
 
+	private void calculate_equal() { 
+
+ 		switch(input_symbol){		
+			case '+':
+				txt_showresult.setText ( String.valueOf ( calculate_number + result  ) );	break;						
+			case '-':
+				txt_showresult.setText ( String.valueOf ( calculate_number - result  ) );	break;			
+			case '*':
+				txt_showresult.setText ( String.valueOf ( calculate_number * result  ) );	break;										
+			case '/':
+				txt_showresult.setText ( String.valueOf ( calculate_number / result  ) );	break;	
+		}
+	}
+	
+
+  	private void record_number(double number) {
+		calculate_number = number;
+	} 	
+
+  	private void record_symbol(char symbol) {
+  		input_symbol = symbol;
+	} 			
+  	
+	private void record_number_memory(double number) {
+		memory_number = number;
+	} 		
+	
 	
 	public U10216032_hw5() {
 		
@@ -252,8 +275,16 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(button_plus);
 		button_plus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "0"); 
+				
+				get_result = txt_showresult.getText();
+				calculate_number = Double.parseDouble( get_result );				
+				record_number( calculate_number );
+				
+				txt_showresult.setText("0");
+				
 				input_symbol = '+'; // record +
+				record_symbol(input_symbol);
+
 			}
 		});			
 
@@ -264,8 +295,14 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(button_minus);
 		button_minus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "0"); 		
+				get_result = txt_showresult.getText();
+				calculate_number = Double.parseDouble( get_result );				
+				record_number( calculate_number );
+				
+				txt_showresult.setText("0");
+				
 				input_symbol = '-'; // record -
+				record_symbol(input_symbol);
 				
 			}
 		});						
@@ -276,8 +313,14 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(button_times);
 		button_times.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "0"); 	
+				get_result = txt_showresult.getText();
+				calculate_number = Double.parseDouble( get_result );				
+				record_number( calculate_number );
+				
+				txt_showresult.setText("0");
+				
 				input_symbol = '*'; // record *
+				record_symbol(input_symbol);
 				
 			}
 		});					
@@ -288,36 +331,72 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(button_divide);
 		button_divide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "0"); 
+				get_result = txt_showresult.getText();
+				calculate_number = Double.parseDouble( get_result );				
+				record_number( calculate_number );
+				
+				txt_showresult.setText("0");
+				
 				input_symbol = '/'; // record /
+				record_symbol(input_symbol);
 				
 			}
 		});					
-	
+/*	
 		// memory the result
-		JButton button_memory = new JButton("MR");
+		JButton button_memory = new JButton("MS");
 		button_memory.setBounds(10, 50, 80, 30);
 		contentPane.add(button_memory);
-		
+		button_memory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// get result(String)
+				get_result = txt_showresult.getText();
+				
+				// turn result(String) to double , memory_number = result
+				memory_number = Double.parseDouble( get_result );
+			}
+		});			
 		
 		// return result + memoried number
 		JButton button_memory_plus = new JButton("M+");
 		button_memory_plus.setBounds(100, 50, 80, 30);
 		contentPane.add(button_memory_plus);
-		
+		button_memory_plus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// get result(String)
+				get_result = txt_showresult.getText();
+
+				// turn result(String) to double , calculate result + memory_number	, and show it			
+				txt_showresult.setText ( String.valueOf ( ( Double.parseDouble( get_result ) + memory_number) ) );
+			}
+		});	
 		
 		// return result - memoried number		
 		JButton button_memory_minus = new JButton("M-");
 		button_memory_minus.setBounds(185, 50, 80, 30);
 		contentPane.add(button_memory_minus);
-		
+		button_memory_minus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// get result(String)
+				get_result = txt_showresult.getText();
+
+				// turn result(String) to double , calculate result - memory_number	, and show it			
+				txt_showresult.setText ( String.valueOf ( ( Double.parseDouble( get_result ) - memory_number ) ) );
+			}
+		});			
 		
 		// turn memoried number to 0
 		JButton button_memory_clean = new JButton("MC");
 		button_memory_clean.setBounds(275, 50, 80, 30);
 		contentPane.add(button_memory_clean);
-		
-		
+		button_memory_clean.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				memory_number = 0;
+			}
+		});			
+*/		
 		// get sin(x) of the result		
 		JButton button_sin = new JButton("sin(x)");
 		button_sin.setBounds(10, 130, 80, 30);
@@ -347,7 +426,7 @@ public class U10216032_hw5 extends JFrame {
 				txt_showresult.setText ( String.valueOf ( Math.cos(Double.parseDouble( get_result ) ) ) );
 			}
 		});			
-		
+
 		// get tan(x) of the result			
 		JButton button_tan = new JButton("tan(x)");
 		button_tan.setBounds(10, 210, 80, 30);
@@ -441,11 +520,25 @@ public class U10216032_hw5 extends JFrame {
 				txt_showresult.setText ( "0" );
 			}
 		});	
-		
+	
 		// show result
 		JButton button_equal = new JButton("=");
 		button_equal.setBounds(365, 207, 59, 33);
 		contentPane.add(button_equal);
-		// determine : result and char exists -> if(char == +)(result + result2)
+		button_equal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// if user already push +, -, * or /
+				if( input_symbol == '+' || input_symbol == '-' || input_symbol == '*' || input_symbol == '/'){
+					
+					// get result(String)
+					get_result = txt_showresult.getText();
+					result = Double.parseDouble(get_result);
+					
+					calculate_equal();
+				
+				}
+			}
+		});	
+		
 	}
 }
