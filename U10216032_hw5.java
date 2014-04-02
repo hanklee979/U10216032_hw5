@@ -157,7 +157,11 @@ public class U10216032_hw5 extends JFrame {
 		contentPane.add(button_negative);
 		button_negative.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				txt_showresult.setText( txt_showresult.getText() + "0"); 		
+				
+				// get result(String)
+				get_result = txt_showresult.getText();
+				
+				txt_showresult.setText ( String.valueOf ( (-1) * ( Double.parseDouble( get_result ) ) ) );	
 			}
 		});			
 		
@@ -180,7 +184,7 @@ public class U10216032_hw5 extends JFrame {
 		button_minus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				txt_showresult.setText( txt_showresult.getText() + "0"); 		
-				input_symbol = '-';
+				input_symbol = '-'; // record -
 				
 			}
 		});						
@@ -192,7 +196,7 @@ public class U10216032_hw5 extends JFrame {
 		button_times.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				txt_showresult.setText( txt_showresult.getText() + "0"); 	
-				input_symbol = '*';
+				input_symbol = '*'; // record *
 				
 			}
 		});					
@@ -204,7 +208,7 @@ public class U10216032_hw5 extends JFrame {
 		button_divide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				txt_showresult.setText( txt_showresult.getText() + "0"); 
-				input_symbol = '/';
+				input_symbol = '/'; // record /
 				
 			}
 		});					
@@ -283,25 +287,79 @@ public class U10216032_hw5 extends JFrame {
 		JButton button_SquareRoot = new JButton("\u221A");
 		button_SquareRoot.setBounds(100, 210, 80, 30);
 		contentPane.add(button_SquareRoot);
+		button_SquareRoot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// get result(String)
+				get_result = txt_showresult.getText();
+
+				// turn result(String) to double , calculate square Root , and show it			
+				txt_showresult.setText ( String.valueOf ( Math.sqrt ( Double.parseDouble( get_result ) ) ) );
+			}
+		});					
 		
-		
-		// get factorial of the result
+		// get factorial of the result (only can be used when result is integer)
 		JButton button_factorial = new JButton("x!");
 		button_factorial.setBounds(100, 170, 80, 30);
 		contentPane.add(button_factorial);
-		
+		button_factorial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				double factorial = 1;
+				
+				// get result(String)
+				get_result = txt_showresult.getText();
+				
+				// get result(double)
+				result = Double.parseDouble( get_result );
+				
+				// turn result(String) to double , calculate factorial			
+				if (result == (int)result && result >= 0) { // if result is natural integer
+
+					if( result == 0){
+						
+						 // if result == 0 , 0! = 1
+						 txt_showresult.setText ( "1" ); 									
+					}
+					
+					else{
+						
+						// if result != 0 , calculate it's factorial
+						for(int i = (int)result ; i >= 1 ; i--){ 
+							factorial = i * factorial;
+						}
+						
+						// turn factorial(double) to string and show it	
+					     txt_showresult.setText ( String.valueOf ( factorial ) );								
+					}
+				}
+			}
+		});			
 
 		// get the reciprocal of the result	
 		JButton button_reciprocal = new JButton("1 / x");
 		button_reciprocal.setBounds(100, 130, 80, 30);
 		contentPane.add(button_reciprocal);
-		
+		button_reciprocal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				// get result(String)
+				get_result = txt_showresult.getText();
+
+				// turn result(String) to double , calculate 1 / x , and show it			
+				txt_showresult.setText ( String.valueOf ( 1 / ( Double.parseDouble( get_result ) ) ) );
+			}
+		});			
 		
 		// clean the result
 		JButton button_clean = new JButton("C");
 		button_clean.setBounds(10, 90, 170, 30);
 		contentPane.add(button_clean);			
-		
+		button_clean.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText ( "0" );
+			}
+		});	
 		
 		// show result
 		JButton button_equal = new JButton("=");
