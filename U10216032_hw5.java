@@ -45,15 +45,17 @@ public class U10216032_hw5 extends JFrame {
 		}
 	}
 	
-
+	// record the first number in +,-,*,/
   	private void record_number(double number) {
 		calculate_number = number;
 	} 	
 
+	// record arithmetic operator 	
   	private void record_symbol(char symbol) {
   		input_symbol = symbol;
 	} 			
-  	
+ 
+	// record memory number
 	private void record_number_memory(double number) {
 		memory_number = number;
 	} 		
@@ -342,7 +344,7 @@ public class U10216032_hw5 extends JFrame {
 				
 			}
 		});					
-/*	
+
 		// memory the result
 		JButton button_memory = new JButton("MS");
 		button_memory.setBounds(10, 50, 80, 30);
@@ -351,9 +353,8 @@ public class U10216032_hw5 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// get result(String)
 				get_result = txt_showresult.getText();
-				
-				// turn result(String) to double , memory_number = result
-				memory_number = Double.parseDouble( get_result );
+
+				record_number_memory( Double.parseDouble( get_result ) );
 			}
 		});			
 		
@@ -396,7 +397,7 @@ public class U10216032_hw5 extends JFrame {
 				memory_number = 0;
 			}
 		});			
-*/		
+		
 		// get sin(x) of the result		
 		JButton button_sin = new JButton("sin(x)");
 		button_sin.setBounds(10, 130, 80, 30);
