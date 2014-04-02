@@ -17,7 +17,8 @@ public class U10216032_hw5 extends JFrame {
 
 	double memory_number;
 	double result;	
-	
+	double calculate_number;	
+	char input_symbol; // determine + , - , * , /
 	
 	private JPanel contentPane;
 	private JTextField txt_showresult;
@@ -51,52 +52,101 @@ public class U10216032_hw5 extends JFrame {
 		JButton btn_number_1 = new JButton("1");
 		btn_number_1.setBounds(195, 170, 44, 30);
 		contentPane.add(btn_number_1);
+		btn_number_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "1"); // get the value of result and add a new number
+			}
+		});	
 		
 		// number 2		
 		JButton btn_number_2 = new JButton("2");
 		btn_number_2.setBounds(249, 170, 44, 30);
 		contentPane.add(btn_number_2);
+		btn_number_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "2"); 
+			}
+		});
 		
 		// number 3		
 		JButton btn_number_3 = new JButton("3");
 		btn_number_3.setBounds(303, 170, 44, 30);
 		contentPane.add(btn_number_3);
+		btn_number_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "3"); 		
+			}
+		});
 		
 		// number 4		
 		JButton btn_number_4 = new JButton("4");
 		btn_number_4.setBounds(195, 130, 44, 30);
 		contentPane.add(btn_number_4);
+		btn_number_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "4"); 			
+			}
+		});
 		
 		// number 5		
 		JButton btn_number_5 = new JButton("5");
 		btn_number_5.setBounds(249, 130, 44, 30);
 		contentPane.add(btn_number_5);		
+		btn_number_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "5"); 		
+			}
+		});		
 		
 		// number 6		
 		JButton btn_number_6 = new JButton("6");
 		btn_number_6.setBounds(303, 130, 44, 30);
 		contentPane.add(btn_number_6);
+		btn_number_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "6"); 			
+			}
+		});
 		
 		// number 7		
 		JButton btn_number_7 = new JButton("7");
 		btn_number_7.setBounds(195, 90, 44, 30);
 		contentPane.add(btn_number_7);
+		btn_number_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "7"); 		
+			}
+		});		
 		
 		// number 8		
 		JButton btn_number_8 = new JButton("8");
 		btn_number_8.setBounds(249, 90, 44, 30);
 		contentPane.add(btn_number_8);
+		btn_number_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "8"); 		
+			}
+		});
 		
 		// number 9		
 		JButton btn_number_9 = new JButton("9");
 		btn_number_9.setBounds(303, 90, 44, 30);
 		contentPane.add(btn_number_9);
+		btn_number_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "9"); 			
+			}
+		});		
 		
 		// number 0		
 		JButton btn_number_0 = new JButton("0");
 		btn_number_0.setBounds(195, 210, 44, 30);
 		contentPane.add(btn_number_0);
-		
+		btn_number_0.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txt_showresult.setText( txt_showresult.getText() + "0"); 		
+			}
+		});		
 		
 		// turn result to positive or negative
 		JButton btn_negative = new JButton("+ / -");
@@ -108,6 +158,7 @@ public class U10216032_hw5 extends JFrame {
 		JButton button_plus = new JButton("+");
 		button_plus.setBounds(365, 50, 59, 30);
 		contentPane.add(button_plus);
+		// char == plus
 		
 		// minus		
 		JButton button_minus = new JButton("-");
@@ -197,5 +248,6 @@ public class U10216032_hw5 extends JFrame {
 		JButton button_equal = new JButton("=");
 		button_equal.setBounds(365, 207, 59, 33);
 		contentPane.add(button_equal);
+		// determine : result and char exists -> if(char == +)(result + result2)
 	}
 }
