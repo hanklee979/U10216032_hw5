@@ -70,7 +70,7 @@ public class U10216032_hw5 extends JFrame {
 	
 		
 		// The textfield used to show result
-		txt_showresult = new JTextField();
+		txt_showresult = new JTextField("0");
 		txt_showresult.setBounds(10, 10, 414, 30);
 		contentPane.add(txt_showresult);
 		
