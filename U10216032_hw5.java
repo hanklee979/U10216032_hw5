@@ -85,7 +85,7 @@ public class U10216032_hw5 extends JFrame {
 		button_password.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				if(txt_password.getText().equals("0000") ){		
+				if(txt_password.getText().equals(password) ){		
 
 					setBounds(100, 100, 450, 300);
 					contentPane = new JPanel();
