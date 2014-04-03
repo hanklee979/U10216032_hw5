@@ -72,14 +72,14 @@ public class U10216032_hw5 extends JFrame {
 		contentPane_password.setLayout(null);
 
 		// Input password in this textfield
-		txt_password = new JTextField("password");
-		txt_password.setBounds(10, 10, 414, 30);
+		txt_password = new JTextField("Input password");
+		txt_password.setBounds(137, 90, 146, 21);
 		contentPane_password.add(txt_password);
 		
 		
-		// if the password is right , open the calculator 
+		// if the password is right (0000) , open the calculator 
 		JButton button_password = new JButton("Enter");
-		button_password.setBounds(195, 170, 44, 30);		
+		button_password.setBounds(166, 150, 87, 23);		
 		contentPane_password.add(button_password);
 		
 		button_password.addActionListener(new ActionListener() {
@@ -569,7 +569,6 @@ public class U10216032_hw5 extends JFrame {
 			}
 		});			
 		
-		// if user enter right password (0000)
 
 	}
 }
