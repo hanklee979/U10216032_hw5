@@ -8,7 +8,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import java.lang.Math;
-import java.awt.BorderLayout;   
+import java.awt.Window;
+
 
 
 public class U10216032_hw5 extends JFrame {
@@ -85,14 +86,15 @@ public class U10216032_hw5 extends JFrame {
 		button_password.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				if(txt_password.getText().equals(password) ){		
+				if(txt_password.getText().equals(password)){		
 
+					pack(); // Refresh UI
+					
 					setBounds(100, 100, 450, 300);
 					contentPane = new JPanel();
 					setContentPane(contentPane);
 					contentPane.setLayout(null);
-				
-					
+
 					// The textfield used to show result
 					txt_showresult = new JTextField("0");
 					txt_showresult.setBounds(10, 10, 414, 30);
@@ -565,7 +567,7 @@ public class U10216032_hw5 extends JFrame {
 						}
 					});	
 					
-					}
+				}
 			}
 		});			
 		
